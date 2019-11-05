@@ -17,6 +17,7 @@ app.get('/api/recipes', async (req, res) => {
         const { data } = await axios.get(`https://www.food2fork.com/api/search?key=${process.env.API_KEY}`)
         res.json(data)
     } catch(err) {
+        err.message = "Something went wrong"
         res.json({err: err.message})
     }
 })
@@ -30,6 +31,7 @@ app.get('/api/recipes/:id', async (req, res) => {
         // const recipe = recipes.filter(recipe => recipe.recipe_id === id)
         res.json(data)
     } catch(err) {
+        err.message = "Recipe not found"
         res.json({err: err.message})
     }
 })

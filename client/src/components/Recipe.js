@@ -23,7 +23,7 @@ const Recipe = ({
                     </div>
                     <div className="card-action">
                         <Link to={`/details/${recipe_id}`} className="btn waves-effect blue mr-1">Details</Link>
-                        <a href={source_url} target="_blank" className="btn waves-effect green">Recipe Url</a>
+                        <a href={source_url} target="_blank" rel="noopener noreferrer" className="btn waves-effect green">Recipe Url</a>
                     </div>
                 </div>
             </div>
