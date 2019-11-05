@@ -20,10 +20,9 @@ class RecipeProvider extends Component {
     
     getTopRecipes = async () => {
         try {
-            const {data: { recipes }} = await axios.get('/data.json')
+            // const {data: { recipes }} = await axios.get('/data.json')
             // const { recipes } = await api.call('get', 'recipes')
-            // const { recipes } = await api.call('get', `search?key=${process.env.REACT_APP_API_KEY}`)
-            // console.log(recipes)
+            const { recipes } = await api.call('get', `search?key=${process.env.REACT_APP_API_KEY}`)
             //added the if statement to prevent app from breaking when food2fork 
             // API request limit has been met
             if (recipes)
@@ -41,9 +40,9 @@ class RecipeProvider extends Component {
 
      getRecipe = async id => {
         try {
-            const { data: { recipe } } = await axios.get('/recipe.json')
+            // const { data: { recipe } } = await axios.get('/recipe.json')
             // const { recipe } = await api.call('get', `recipes/${id}`)
-            // const { recipe } = await api.call('get', `get?key=${process.env.REACT_APP_API_KEY}&rId=${id}`)
+            const { recipe } = await api.call('get', `get?key=${process.env.REACT_APP_API_KEY}&rId=${id}`)
             return recipe
         } catch (error) {
             throw error
